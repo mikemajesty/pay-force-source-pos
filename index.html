@@ -1,0 +1,21 @@
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="index.css"/>
+  <script type="text/javascript" src="index.js"></script>
+  <script src="libs/tetra.js"></script>
+  <script src="libs/mithril.js"></script>
+  <script src="libs/iscroll-lite.js"></script>
+</head>
+<body>
+  <h1>Payforce</h1>
+  <form action="https://payforce.herokuapp.com/api/pos/venda" method="POST">
+    <span>N° Celular</span>
+    <input name="phone" type="text"/>
+    <div>
+      <span class="break">Valor</span>
+      <input name="value" type="text"/>
+    </div>
+    <input type="submit" value="Enviar"></input>
+  </form>
+</body>
+</html>
