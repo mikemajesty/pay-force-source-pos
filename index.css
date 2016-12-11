@@ -84,6 +84,11 @@ h1 {
   #formulario {
     display: none;
   }
+
+  #aguardando {
+    display: none;
+  }
+
   #sucesso {
     display: block;
   }
@@ -91,7 +96,7 @@ h1 {
 
 .titlePrint {
   font-size: 50px;
-  margin-bottom: 4px;
+  margin-bottom: 15px;
 }
 
 #sucesso {
