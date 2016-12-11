@@ -5,11 +5,10 @@
 <body>
   <div id="formulario">
     <h1><h1>P A Y <span class="redLabel"> F O R C E </span></h1></h1>
-    <span><b class="fontBig">N° Celular</b></span>
-    <input class="form-control" name="telefone" type="text"/>
-    <div>
-      <span class="break"><b class="fontBig">Valor</b></span>
-      <input class="form-control" name="valor" type="text"/>
+    <input class="form-control" name="telefone" type="text" placeholder="Número Celular"/>
+
+    <div id="valor">
+      <input class="form-control" name="valor" type="text" placeholder="Valor"/>
     </div>
     <button class="btn btn-primary" id="enviar"> <span class="fontBold">Enviar<span></button>
   </div>
@@ -19,10 +18,12 @@
   </div>
 
   <div id="sucesso" class="hide">
-    <h1 class="titlePrint">Payforce</h1>
+    <h1 class="titlePrint">PayForce</h1>
+    <div>Lojinha CodeForce</div>
+    <span>Valor: R$ </span>
+    <b id="valorPrint"></b>
+    <div>Data: 11/12/2016</div>
     <div>Compra efetuada com sucesso!</div>
-    <span>Valor:</span>
-    <span id="valorPrint"></span>
   </div>
 
   <script src='libs/tetra.js'></script>
