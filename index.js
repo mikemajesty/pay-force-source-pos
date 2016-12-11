@@ -19,6 +19,9 @@ function getResultado() {
         if(mensagem === "S") {
           mudarSucessoView();
           window.print();
+          setTimeout(function() {
+            location.reload();
+          }, 9000);
         }
         if(mensagem === "N") {
           mudarNegadoView();
