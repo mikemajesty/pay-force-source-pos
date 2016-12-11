@@ -6,18 +6,28 @@
   <div id="formulario">
     <h1>Payforce</h1>
     <span>N° Celular</span>
-    <input name="telefone" type="text"/>
+    <input class="form-control" name="telefone" type="text"/>
     <div>
       <span class="break">Valor</span>
-      <input name="valor" type="text"/>
+      <input class="form-control" name="valor" type="text"/>
     </div>
-    <button id="enviar">Enviar</button>
+    <button class="btn btn-primary" id="enviar">Enviar</button>
+    <button id="teste">Teste</button>
   </div>
 
   <div id="aguardando" class="hide">
     Aguardando ...
   </div>
 
+  <div id="sucesso" class="hide">
+    <h1>Payforce</h1>
+    <span>Compra efetuada com sucesso!</span>
+    <span id="valorPrint"></span>
+  </div>
+
+  <div id="negado" class="hide">
+    Compra negada
+  </div>
 
   <script src='libs/tetra.js'></script>
   <script src='index.js'></script>

@@ -2,27 +2,41 @@ window.onload = function() {
   var btnEnviar = document.getElementById("enviar");
 
   btnEnviar.onclick = function() {
-    var valor = document.getElementsByName('telefone')[0].value;
+    var valor = document.getElementsByName('valor')[0].value;
+    document.getElementById("valorPrint").value = valor;
     var telefone = document.getElementsByName('telefone')[0].value;
     postInfoPhone(valor, telefone);
   };
+
+  var btnTeste = document.getElementById("teste");
+
+  btnTeste.onclick = function() {
+    imprimir();
+  }
 }
 
-function getPullResultadoPagamento() {
-    setInterval(function() {
-       getResultado();
-     }, 5000);
-}
+var transacaoId = "";
 
-function getResultado(transacaoId) {
+function getResultado() {
   var xmlHttp = new XMLHttpRequest();
   xmlHttp.onreadystatechange = function() {
-      if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
-          alert(xmlHttp.responseText);
-      console.log(xmlHttp.status);
+      if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+        var mensagem = xmlHttp.responseText;
+        if(mensagem === "S") {
+          mudarSucessoView();
+        }
+        if(mensagem === "N") {
+          mudarNegadoView();
+        }
+      }
+      if(xmlHttp.readyState == 4 && xmlHttp.status != 200) {
+        setTimeout(function() {
+          getResultado();
+        }, 6000);
+      }
   }
   xmlHttp.open("GET", "https://payforce.herokuapp.com/api/pos/resultado?" + "id=" + transacaoId, true);
-  xmlHttp.send(null);
+  xmlHttp.send();
 }
 
 function postInfoPhone(valor, telefone) {
@@ -30,9 +44,9 @@ function postInfoPhone(valor, telefone) {
   r.open("POST", "https://payforce.herokuapp.com/api/pos/venda", true);
   r.onreadystatechange = function () {
     if(r.readyState == 4 && r.status == 200) {
-      changeView();
-      transacaoId = r.responseText;
-      getPullResultadoPagamento(transacaoId);
+      mudarAguardandoView();
+      transacaoId = r.responseText.replace('"', '').replace('"', '');
+      getResultado();
     }
   };
   r.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -41,7 +55,21 @@ function postInfoPhone(valor, telefone) {
 }
 
 
-function changeView() {
+function mudarAguardandoView() {
   document.getElementById('formulario').classList.add('hide');
   document.getElementById('aguardando').classList.remove('hide');
+}
+
+function mudarSucessoView() {
+  document.getElementById('aguardando').classList.add('hide');
+  document.getElementById('sucesso').classList.remove('hide');
+}
+
+function mudarNegadoView() {
+  document.getElementById('aguardando').classList.add('hide');
+  document.getElementById('negado').classList.remove('hide');
+}
+
+function imprimir() {
+  window.print();
 }
