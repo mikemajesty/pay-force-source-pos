@@ -20,3 +20,4 @@
 **Natasha Matias** &lt;natasham630@gmail.com&gt;
 * [celso-wo](https://github.com/celso-wo) -
 **Celso Wo** &lt;celsowo@gmail.com&gt;
+**Natalia Alexandria - &lt;natalia_alexandria@hotmail.com&gt;
