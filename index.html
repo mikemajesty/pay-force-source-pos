@@ -3,17 +3,14 @@
   <link rel="stylesheet" type="text/css" href="index.css"/>
 </head>
 <body>
-  <div class="page">
-
   <div id="formulario">
-    <h1>Payforce</h1>
-    <span>N° Celular</span>
-    <input class="form-control" name="telefone" type="text"/>
-    <div>
-      <span class="break">Valor</span>
-      <input class="form-control" name="valor" type="text"/>
+    <h1><h1>P A Y <span class="redLabel"> F O R C E </span></h1></h1>
+    <input class="form-control" name="telefone" type="text" placeholder="Número Celular"/>
+
+    <div id="valor">
+      <input class="form-control" name="valor" type="text" placeholder="Valor"/>
     </div>
-    <button class="btn btn-primary" id="enviar">Enviar</button>
+    <button class="btn btn-primary" id="enviar"> <span class="fontBold">Enviar<span></button>
   </div>
 
   <div id="aguardando" class="hide">
@@ -21,13 +18,14 @@
   </div>
 
   <div id="sucesso" class="hide">
-    <h1>Payforce</h1>
+    <h1 class="titlePrint">PayForce</h1>
+    <div>Lojinha CodeForce</div>
+    <span>Valor: R$ </span>
+    <b id="valorPrint"></b>
+    <div>Data: 11/12/2016</div>
     <div>Compra efetuada com sucesso!</div>
-    <span>Valor:</span>
-    <span id="valorPrint"></span>
   </div>
 
-</div>
   <script src='libs/tetra.js'></script>
   <script src='index.js'></script>
 </body>

@@ -3,7 +3,7 @@ window.onload = function() {
 
   btnEnviar.onclick = function() {
     var valor = document.getElementsByName('valor')[0].value;
-    document.getElementById("valorPrint").innerHTML = valor;
+    document.getElementById("valorPrint").innerHTML = parseFloat(valor).toFixed(2).replace(".", ",");
     var telefone = document.getElementsByName('telefone')[0].value;
     postInfoPhone(valor, telefone);
   };
