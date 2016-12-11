@@ -3,7 +3,7 @@
 
 body {
   margin:0;
-  background-color:	#D8D8D8 
+  background-color:	#D8D8D8
   }
 
 
@@ -100,4 +100,9 @@ h1 {
 
 #valor {
   margin-top: 15px;
+}
+
+#formulario {
+  margin-left: 7px;
+  margin-right: 7px;
 }
