@@ -3,19 +3,10 @@ window.onload = function() {
 
   btnEnviar.onclick = function() {
     var valor = document.getElementsByName('valor')[0].value;
-    document.getElementById("valorPrint").value = valor;
+    document.getElementById("valorPrint").innerHTML = valor;
     var telefone = document.getElementsByName('telefone')[0].value;
     postInfoPhone(valor, telefone);
   };
-
-  var btnTeste = document.getElementById("teste");
-
-  btnTeste.onclick = function() {
-    // var elem = document.getElementById("formulario");
-    // elem.parentNode.removeChild(elem);
-    // document.getElementsByTagName("body")[0].classList.add("resizebody");
-    window.print();
-  }
 }
 
 var transacaoId = "";
@@ -25,8 +16,9 @@ function getResultado() {
   xmlHttp.onreadystatechange = function() {
       if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
         var mensagem = xmlHttp.responseText;
-        if(mensagem === "I") {
+        if(mensagem === "S") {
           mudarSucessoView();
+          window.print();
         }
         if(mensagem === "N") {
           mudarNegadoView();
@@ -39,6 +31,8 @@ function getResultado() {
       }
   }
   xmlHttp.open("GET", "https://payforce.herokuapp.com/api/pos/resultado?" + "id=" + transacaoId, true);
+  xmlHttp.setRequestHeader("Content-type", "text/plain");
+  xmlHttp.setRequestHeader("Accept", "application/json");
   xmlHttp.send();
 }
 
