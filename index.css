@@ -78,5 +78,14 @@ h1 {
 }
 
 .titlePrint {
-  font-size: 30px;
+  font-size: 50px;
+  margin-bottom: 4px;
+}
+
+#sucesso {
+  font-size: 20px;
+}
+
+#valor {
+  margin-top: 15px;
 }
