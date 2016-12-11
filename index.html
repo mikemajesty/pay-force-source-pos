@@ -1,21 +1,25 @@
 <html>
 <head>
   <link rel="stylesheet" type="text/css" href="index.css"/>
-  <script type="text/javascript" src="index.js"></script>
-  <script src="libs/tetra.js"></script>
-  <script src="libs/mithril.js"></script>
-  <script src="libs/iscroll-lite.js"></script>
 </head>
 <body>
-  <h1>Payforce</h1>
-  <form action="https://payforce.herokuapp.com/api/pos/venda" method="POST">
+  <div id="formulario">
+    <h1>Payforce</h1>
     <span>N° Celular</span>
-    <input name="phone" type="text"/>
+    <input name="telefone" type="text"/>
     <div>
       <span class="break">Valor</span>
-      <input name="value" type="text"/>
+      <input name="valor" type="text"/>
     </div>
-    <input type="submit" value="Enviar"></input>
-  </form>
+    <button id="enviar">Enviar</button>
+  </div>
+
+  <div id="aguardando" class="hide">
+    Aguardando ...
+  </div>
+
+
+  <script src='libs/tetra.js'></script>
+  <script src='index.js'></script>
 </body>
 </html>
