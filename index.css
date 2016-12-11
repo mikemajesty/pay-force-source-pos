@@ -1,7 +1,10 @@
 /*** SCREEN ***/
 @media screen {
 
-body {margin:0;}
+body {
+  margin:0;
+  background-color:	#D8D8D8 
+  }
 
 
 h1 {
@@ -61,6 +64,15 @@ h1 {
 
 .redLabel {
  color: red;
+}
+
+.fontBig {
+  font-size: 18px;
+}
+
+.fontBold {
+  font-size: 18px;
+  font-weight: bold;
 }
 
 /*** PRINT ***/
