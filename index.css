@@ -63,6 +63,11 @@ h1 {
  color: red;
 }
 
+.fontBold {
+  font-size: 18px;
+  font-weight: bold;
+}
+
 /*** PRINT ***/
 @media print {
     html,body {
