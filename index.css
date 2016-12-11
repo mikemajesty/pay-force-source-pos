@@ -76,3 +76,7 @@ h1 {
     display: block;
   }
 }
+
+.titlePrint {
+  font-size: 30px;
+}
