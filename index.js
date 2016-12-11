@@ -11,7 +11,10 @@ window.onload = function() {
   var btnTeste = document.getElementById("teste");
 
   btnTeste.onclick = function() {
-    imprimir();
+    // var elem = document.getElementById("formulario");
+    // elem.parentNode.removeChild(elem);
+    // document.getElementsByTagName("body")[0].classList.add("resizebody");
+    window.print();
   }
 }
 
@@ -22,7 +25,7 @@ function getResultado() {
   xmlHttp.onreadystatechange = function() {
       if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
         var mensagem = xmlHttp.responseText;
-        if(mensagem === "S") {
+        if(mensagem === "I") {
           mudarSucessoView();
         }
         if(mensagem === "N") {
@@ -68,8 +71,4 @@ function mudarSucessoView() {
 function mudarNegadoView() {
   document.getElementById('aguardando').classList.add('hide');
   document.getElementById('negado').classList.remove('hide');
-}
-
-function imprimir() {
-  window.print();
 }

@@ -1,3 +1,9 @@
+/*** SCREEN ***/
+@media screen {
+
+body {margin:0;}
+
+
 h1 {
   width: 100%;
   text-align:center;
@@ -21,8 +27,6 @@ h1 {
   color: #55595c;
   background-color: #fff;
   background-image: none;
-  -webkit-background-clip: padding-box;
-          background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 0.25rem;
 }
@@ -43,12 +47,28 @@ h1 {
   white-space: nowrap;
   vertical-align: middle;
   cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
   border: 1px solid transparent;
   padding: 0.5rem 1rem;
   font-size: 1rem;
   border-radius: 0.25rem;
+}
+
+.resizebody {
+  height: 50px;
+}
+
+}
+
+/*** PRINT ***/
+@media print {
+    html,body {
+      height:1px;
+    }
+
+  #formulario {
+    display: none;
+  }
+  #sucesso {
+    display: block;
+  }
 }
