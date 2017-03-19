@@ -10,6 +10,13 @@
 
 <hr>
 
+##### License
+
+It is available under the MIT license.
+[License](https://opensource.org/licenses/mit-license.php)
+
+<hr>
+
 ### Collaborators
 
 * [GabrielJacquier](https://github.com/GabrielJacquier) -
